@@ -17,6 +17,7 @@
         <allure.junit5>2.13.1</allure.junit5>
         <lombok.version>1.18.12</lombok.version>
         <restassured.version>4.3.3</restassured.version>
+        <selenide.version>5.20.1</selenide.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
@@ -80,6 +81,13 @@
             <artifactId>lombok</artifactId>
             <version>1.18.16</version>
             <scope>test</scope>
+        </dependency>
+
+
+        <dependency>
+            <groupId>com.codeborne</groupId>
+            <artifactId>selenide</artifactId>
+            <version>${selenide.version}</version>
         </dependency>
 
     </dependencies>
