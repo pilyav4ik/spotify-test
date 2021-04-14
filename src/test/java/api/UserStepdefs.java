@@ -1,22 +1,14 @@
 package api;
 
 import api.config.Config;
+import api.config.ResponseWithToken;
 import api.service.UserService;
 import api.user.User;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.restassured.response.ValidatableResponse;
 import lombok.extern.slf4j.Slf4j;
-import org.junit.Assert;
-import org.junit.jupiter.api.Test;
 
-import java.io.IOException;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.net.URLConnection;
-
-import static io.restassured.RestAssured.baseURI;
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
 
@@ -29,6 +21,13 @@ public class UserStepdefs {
 
     @Given("get user request")
     public void iShouldGetCode() {
+        User user = userService.getUser(config.getURL(), config.getTOKEN());
+        System.out.println(user);
+    }
+
+
+    @Given("get user name")
+    public void iShouldGetName() {
         User user = userService.getUser(config.getURL(), config.getTOKEN());
         System.out.println(user);
     }
@@ -50,5 +49,17 @@ public class UserStepdefs {
         int expectStatus = int1 ;
 
         assertEquals(actualStatus, expectStatus);
+    }
+
+
+    @Then("name is {string}")
+    public void getUserName(String string) {
+
+        ResponseWithToken responseWithToken =  new ResponseWithToken();
+
+        String actualName = responseWithToken.reponse().extract().body().jsonPath().getString("display_name");
+        String  expectName = "ipiliavskyi" ;
+        System.out.println(" ActualName : "+ actualName);
+        assertEquals(actualName, expectName);
     }
 }

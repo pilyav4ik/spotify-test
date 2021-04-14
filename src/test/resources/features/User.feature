@@ -6,3 +6,10 @@ Feature: Get user
     Examples:
     |status|
     |  200 |
+
+  Scenario Template: Send request for getting user Name
+    Given get user name
+    Then name is "<display_name>"
+    Examples:
+      |display_name|
+      |ipiliavskyi|
