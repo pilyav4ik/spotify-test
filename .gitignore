@@ -15,4 +15,4 @@ target/
 allure-results/
 
 #Secret
-/token/*
+/src/test/java/api/token/
