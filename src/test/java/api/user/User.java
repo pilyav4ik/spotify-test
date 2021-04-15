@@ -3,6 +3,8 @@ package api.user;
 
 import java.util.List;
 
+import api.model.ExternalUrls;
+import api.model.Followers;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 

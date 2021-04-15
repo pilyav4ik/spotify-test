@@ -1,5 +1,5 @@
 
-package api.user;
+package api.model;
 
 import lombok.Data;
 

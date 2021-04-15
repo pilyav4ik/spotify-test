@@ -51,6 +51,25 @@ public class UserStepdefs {
         assertEquals(actualStatus, expectStatus);
     }
 
+    @Then("request is 400")
+    public void request_is_400(Integer int1) {
+
+
+        ValidatableResponse response = given()
+                .header("Content-Type", "application/json")
+                .auth()
+                .oauth2(config.getTOKEN()+"false")
+                .get("https://api.spotify.com/v1/me")
+                .then()
+                .assertThat();
+
+        int actualStatus = response.extract().statusCode();
+        int expectStatus = int1 ;
+
+        assertEquals(actualStatus, expectStatus);
+    }
+
+
 
     @Then("name is {string}")
     public void getUserName(String string) {

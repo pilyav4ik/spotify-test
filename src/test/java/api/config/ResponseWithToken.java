@@ -20,4 +20,14 @@ public class ResponseWithToken {
                 .assertThat();
     }
 
+    public ValidatableResponse responseWithIncorrectToken(){
+        return given()
+                .header("Content-Type", "application/json")
+                .auth()
+                .oauth2(config.getTOKEN()+"incorrect")
+                .get("https://api.spotify.com/v1/me")
+                .then()
+                .assertThat();
+    }
+
 }

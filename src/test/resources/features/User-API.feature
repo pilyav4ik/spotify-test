@@ -7,6 +7,13 @@ Feature: Get user
     |status|
     |  200 |
 
+  Scenario Template: Send request for getting user info with status 401
+    Given get user request
+    Then request is <status>
+    Examples:
+      |status|
+      |  401 |
+
   Scenario Template: Send request for getting user Name
     Given get user name
     Then name is "<display_name>"

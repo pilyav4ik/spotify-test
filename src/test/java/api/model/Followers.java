@@ -1,10 +1,9 @@
 
-package api.user;
+package api.model;
 
 import lombok.Data;
 
 @Data
-@SuppressWarnings("unused")
 public class Followers {
 
     private Object href;
