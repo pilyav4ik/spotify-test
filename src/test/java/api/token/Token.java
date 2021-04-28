@@ -3,7 +3,7 @@ package api.token;
 public class Token {
 
     public String getToken() {
-        String token = "BQAUlPKHPF-yTpVMfg2n9yMQ50sgcFXXsdFIIV66WmO6gjUP0lMBrBcZYdCb1sCyH560ggp8rGMCAZlv1XypX7mxHFRfxpcb1h312UFK_ysLRAJbhUd8xy-VEHcpyXxPZyyEuvCFkVO05U8TtjOl9uEaAbrk1tUPFREzMSiSaNNVXuEIwmJ5AIG6No7iTzwZFPMyBWuMZ-xt4fEcEwV0QF2UU6G8tetw0OROykXff_JdIx6Uu6j5X-PxBI7I92Uao7Hvm4GGnuLdbyu9tr62xKfscYs2ntRn_t3yksym";
+        String token = "BQB14TZpxhzkowzOUW-toeMjUs-tP0wLW2n0cRqEHjanPsPdhF-2RPACas4s-JwjTTROyXNgQwOL8Ys7XpH8uyUrP7Ls3ucrpP0Sthiv-ZXoMdOTIrOkJKYJQJrDcyHaoQs4uIHrXYEM3AgHJ7hs3desIMXkoPyMBvUcM8C_5fcmvBY";
         return token;
     }
 }
