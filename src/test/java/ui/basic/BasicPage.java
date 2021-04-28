@@ -7,11 +7,15 @@ import static com.codeborne.selenide.Selenide.$;
 public class BasicPage {
 
 
-    void clickLink(String text){
+    public void clickLink(String text){
         $(By.xpath("//a[contains(text(),'"+text+"')]")).click();
     }
 
-    void clickButton(String text) {
+    public void clickButton(String text) {
         $(By.xpath("//button[contains(text(),'"+text+"')]"));
+    }
+
+    public void contentIsVisible(String text){
+        $(By.xpath("//*[contains(text(),'"+text+"')]"));
     }
 }

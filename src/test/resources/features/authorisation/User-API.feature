@@ -1,4 +1,5 @@
-Feature: Get user
+Feature: User sign in API
+
   I needed get user information by token
   Scenario Template: Send request for getting user info
     Given get user request

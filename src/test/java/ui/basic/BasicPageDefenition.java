@@ -9,7 +9,7 @@ public class BasicPageDefenition {
 
     private BasicPage basicPage = new BasicPage();
 
-    @Given("I go to the {string} page")
+    @Given("go to the {string} page")
     public void i_want_to_open_page(String webpage) {
         open(webpage);
     }
@@ -22,6 +22,11 @@ public class BasicPageDefenition {
     @Then("click {string} button")
     public void clickButton(String string) {
         basicPage.clickButton(string);
+    }
+
+    @Then("content with text {string} visible")
+    public void confirmMessage(String string){
+        basicPage.contentIsVisible(string);
     }
 
 }

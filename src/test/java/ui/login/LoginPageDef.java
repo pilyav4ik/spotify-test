@@ -1,7 +1,6 @@
 package ui.login;
 
 import io.cucumber.java.en.Then;
-import ui.basic.BasicPageDefenition;
 import ui.config.UserConfig;
 
 public class LoginPageDef {
@@ -28,7 +27,4 @@ public class LoginPageDef {
         loginPage.clickLogInButton();
     }
 
-    @Then("content with {string} visible")
-    public void contentWithVisible(String arg0) {
-    }
 }
