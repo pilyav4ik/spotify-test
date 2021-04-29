@@ -7,13 +7,11 @@ import api.user.User;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.restassured.response.ValidatableResponse;
-import lombok.extern.slf4j.Slf4j;
 
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
 
 
-@Slf4j
 public class UserStepdefs {
 
     private UserService userService = new UserService();
@@ -33,40 +31,20 @@ public class UserStepdefs {
     }
 
 
-    @Then("request is {int}")
-    public void request_is(Integer int1) {
-
+    @Then("token is {string} then request is {int}")
+    public void request_is(String token, int status) {
 
         ValidatableResponse response = given()
                 .header("Content-Type", "application/json")
                 .auth()
-                .oauth2(config.getTOKEN())
+                .oauth2(token)
                 .get("https://api.spotify.com/v1/me")
                 .then()
                 .assertThat();
 
         int actualStatus = response.extract().statusCode();
-        int expectStatus = int1 ;
 
-        assertEquals(actualStatus, expectStatus);
-    }
-
-    @Then("request is 400")
-    public void request_is_400(Integer int1) {
-
-
-        ValidatableResponse response = given()
-                .header("Content-Type", "application/json")
-                .auth()
-                .oauth2(config.getTOKEN()+"false")
-                .get("https://api.spotify.com/v1/me")
-                .then()
-                .assertThat();
-
-        int actualStatus = response.extract().statusCode();
-        int expectStatus = int1 ;
-
-        assertEquals(actualStatus, expectStatus);
+        assertEquals(actualStatus, status);
     }
 
 
@@ -78,7 +56,6 @@ public class UserStepdefs {
 
         String actualName = responseWithToken.reponse().extract().body().jsonPath().getString("display_name");
         String  expectName = "ipiliavskyi" ;
-        System.out.println(" ActualName : "+ actualName);
-        assertEquals(actualName, expectName);
+        assertEquals(expectName, actualName);
     }
 }

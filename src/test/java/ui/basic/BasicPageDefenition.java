@@ -24,7 +24,7 @@ public class BasicPageDefenition {
         basicPage.clickButton(string);
     }
 
-    @Then("content with text {string} visible")
+    @Then("content with {string} visible")
     public void confirmMessage(String string){
         basicPage.contentIsVisible(string);
     }
